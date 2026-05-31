@@ -3,6 +3,6 @@ export interface Student {
     firstname: string;
     lastname: string;
     email: string;
-    subject: 'English' | 'Geography' | 'Maths' | 'Science';
+    subject: string; //this was harcoded list of values for some reason
     grade: number;
 }

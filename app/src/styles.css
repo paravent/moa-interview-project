@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+
+.students-table-wrapper {
+  padding: 1rem 0;
+}
+
+.students-table-wrapper .table-responsive {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.students-table-wrapper .table thead th {
+  background-color: #cf85e9;
+  color: #ffffff;
+  border: none;
+}
+
+.students-table-wrapper .table tbody tr:hover {
+  background-color: #f8f9ff;
+}
+
+.students-table-wrapper .action-btn {
+  min-width: 92px;
+}
+
+.selected-student-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.selected-student-card .card-body {
+  padding: 1.25rem;
+}
+
+.selected-student-card strong {
+  color: #212529;
+}
+
+.green {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.yellow {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.red {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Ensure Bootstrap table striping doesn't override our row colours */
+.students-table-wrapper .table tbody tr.green > td,
+.students-table-wrapper .table tbody tr.green > th {
+  background-color: #d4edda !important;
+  color: #155724 !important;
+}
+
+.students-table-wrapper .table tbody tr.yellow > td,
+.students-table-wrapper .table tbody tr.yellow > th {
+  background-color: #f0a40d !important;
+  color: #efd5b2 !important;
+}
+
+.students-table-wrapper .table tbody tr.red > td,
+.students-table-wrapper .table tbody tr.red > th {
+  background-color: #f8d7da !important;
+  color: #721c24 !important;
+}

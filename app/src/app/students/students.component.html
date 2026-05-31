@@ -1,16 +1,45 @@
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Subject</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let student of students">
-        <td> {{ student.firstname   }} </td>
-        <td> {{ student.lastname }} </td>
-        <td> {{ student.subject }} </td>
-    </tr>
-    </tbody>
-</table>
+<div class="students-table-wrapper">
+  <div class="table-responsive shadow-sm rounded bg-white overflow-hidden">
+    <table class="table table-striped table-hover mb-0">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Subject</th>
+          <th>Grade</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students" class="align-middle cursor-pointer" [ngClass]="classifyGradeColour(student.grade)">
+          <td>{{ student.firstname }}</td>
+          <td>{{ student.lastname }}</td>
+          <td>{{ student.subject }}</td>
+          <td>{{ student.grade }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary action-btn" (click)="selectStudent(student)">Select</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="selectedStudent" class="selected-student-card card p-3 shadow-sm mt-4">
+    <div class="card-body">
+      <h2 class="h5 mb-3">Selected Student</h2>
+      <div class="row gx-3 gy-2">
+        <div class="col-sm-6"><strong>ID:</strong> {{ selectedStudent?.id }}</div>
+        <div class="col-sm-6"><strong>Grade:</strong> {{ selectedStudent?.grade }}</div>
+        <div class="col-sm-6"><strong>First Name:</strong> {{ selectedStudent?.firstname }}</div>
+        <div class="col-sm-6"><strong>Last Name:</strong> {{ selectedStudent?.lastname }}</div>
+        <div class="col-12"><strong>Subject:</strong> {{ selectedStudent?.subject }}</div>
+        <div class="col-12">
+          <strong>Password:</strong>
+          <a href="#" (click)="togglePassword($event)">click to reveal</a>
+          <span *ngIf="showPassword" class="text-muted">just kidding ;)</span>
+        </div>
+      </div>
+      <button class="btn btn-sm btn-secondary mt-3" (click)="selectedStudent = null; showPassword = false">Close</button>
+    </div>
+  </div>
+</div>

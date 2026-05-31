@@ -90,10 +90,10 @@ platform (e.g. BitBucket, GitHub).
 
 **Frontend Activities**
 
-- [ ] The `StudentsComponent` should display a list of students in the table provided.
+- [ x ] The `StudentsComponent` should display a list of students in the table provided.
       Wire up the `StudentsService` and populate the table. You may notice the data
       doesn't display as expected — investigate and fix any issues.
-- [ ] Add a column to display grades with colour coding:
+- [ x ] Add a column to display grades with colour coding:
     - Green: grade > 80%
     - Orange: grade between 50% and 80%
     - Red: grade < 50%
@@ -103,7 +103,7 @@ platform (e.g. BitBucket, GitHub).
 
 - [ x ] Connect the frontend to the API at `http://127.0.0.1:8000/api/students/`.
       If the connection doesn't work out of the box, diagnose and resolve the issue.
-- [ ] Allow a student to be selected from the list to display their full details
+- [ x ] Allow a student to be selected from the list to display their full details
       (id, email, etc.) Ensure all fields display correctly.
 
 **Extras for if you have time:**
@@ -114,7 +114,7 @@ platform (e.g. BitBucket, GitHub).
 
 **Submission Requirements**
 
-- [ ] Note any bugs you found and how you resolved them in this README
+- [ x ] Note any bugs you found and how you resolved them in this README
 - [ ] (optional) provide a brief screen recording (1-2 min) showing the working application
 
 ---
@@ -126,3 +126,8 @@ platform (e.g. BitBucket, GitHub).
 - [Laravel Sail Guide](https://laravel.com/docs/12.x/sail)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - [PHP Composer Getting Started Guide](https://getcomposer.org/doc/00-intro.md)
+
+
+bugz - 
+  - Harcoded or statements in student model to only allow 4 subjects, if we add a new one that breaks everything 
+  - 
