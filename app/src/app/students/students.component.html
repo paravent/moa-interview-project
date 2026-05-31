@@ -1,5 +1,7 @@
 <div class="students-table-wrapper">
   <div class="table-responsive shadow-sm rounded bg-white overflow-hidden">
+    <app-search (search)="onSearch($event)"></app-search>
+
     <table class="table table-striped table-hover mb-0">
       <thead>
         <tr>
@@ -11,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let student of students" class="align-middle cursor-pointer" [ngClass]="classifyGradeColour(student.grade)">
+        <tr *ngFor="let student of filteredStudents" class="align-middle cursor-pointer" [ngClass]="classifyGradeColour(student.grade)">
           <td>{{ student.firstname }}</td>
           <td>{{ student.lastname }}</td>
           <td>{{ student.subject }}</td>

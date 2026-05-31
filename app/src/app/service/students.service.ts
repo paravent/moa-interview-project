@@ -16,4 +16,9 @@ export class StudentsService {
         );
     }
 
+    search (query: string): Observable<Student[]> {
+        return this.http.get<{data: Student[]}>(`${this.url}?q=${encodeURIComponent(query)}`)
+        .pipe(map(({data}) => data));
+    }
+
 }
